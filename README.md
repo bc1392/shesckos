@@ -1,5 +1,5 @@
 # SheskOS
-**SH** based D**esk**top "**O**perating **S**ystem".
+**SH**-based D**esk**top "**O**perating **S**ystem".
 
 ---
 
@@ -9,6 +9,14 @@ Before attempting to start SheskOS, make sure to execute `sh make.sh` in the roo
 ---
 
 ### Changelog
+- **Version 0.0.4**
+    - Moved system modules from `system` to `modules`.
+    - Added `appexec` library.
+    - Upgraded make script.
+    - Slimmed output on boot, more info now in log.
+    - Made log easier to read.
+    - Created `hello` application to test `appexec`.
+    - Integrated `DIALOGRC` configuration.
 - **Version 0.0.3**
     - Got rid of the need for check scripts.
     - Migrated core checking to `dpkg`.
@@ -16,7 +24,7 @@ Before attempting to start SheskOS, make sure to execute `sh make.sh` in the roo
 - **Version 0.0.2**
     - Added logging functionality.
 - **Version 0.0.1**
-    - Created the "Kernal".
+    - Created the "kernal".
     - Added core resources and libraries.
     - Added system modules.
     - Created make script.

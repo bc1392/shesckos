@@ -1,26 +1,61 @@
 #!/bin/bash
 
+# Formatting codes.
+bold=`echo -en "\e[1m"`
+dim=`echo -en "\e[2m"`
+normal=`echo -en "\e[0m"`
+red=`echo -en "\e[31m"`
+green=`echo -en "\e[32m"`
+white=`echo -en "\e[97m"`
+default=`echo -en "\e[39m"`
+
 # Start: Inialize.
-echo "[S] Making SheskOS..."
+echo "${bold}${white}[S] Making SheskOS...${default}${normal}"
+errors=0
 
 # Task 0: Prepare lists.
-echo -e "\n[0] List Preperation:"
-echo "    ~ Scripts"; scripts=(\
+echo -e "\n${bold}${white}[0] List Preperation:${default}${normal}"
+echo "    ${white}l1${default} : Packages"; packages=(\
+    bash dialog
+)
+echo "    ${white}l2${default} : Scripts"; scripts=(\
     main.sh\
     resources/core/check.sh\
     resources/core/import.sh\
     resources/core/sysmod.sh\
+    resources/libraries/appexec.sh\
     resources/libraries/color.sh\
-    system/shome.sh\
+    modules/shome.sh\
+    applications/hello/main.sh\
 )
 
-# Task 1: Flag scripts as executable.
-echo -e "\n[1] Execution Flags:"
-echo "    +x : (make.sh)"; chmod +x "make.sh"
-echo "    +x : (run.sh)"; chmod +x "run.sh"
+# Task 1: Check packages.
+echo -e "\n${bold}${white}[1] Package Checks:${default}${normal}"
+for item in "${packages[@]}"; do
+    dpkg -s "$item">/dev/null; code=$?
+    if [ $code != 0 ]; then
+        errors=$((errors+1))
+        echo "    ${red}!?${default} : $item"
+    else
+        echo "    ${green}OK${default} : $item"
+    fi
+done
+
+# Task 2: Flag scripts as executable.
+echo -e "\n${bold}${white}[2] Execution Flags:${default}${normal}"
 for item in "${scripts[@]}"; do
-    echo "    +x : $item"; chmod +x "source/$item"
+    if [ ! -w "source/$item" ]; then
+        errors=$((errors+1))
+        echo "    ${red}!x${default} : $item"
+    else
+        echo "    ${green}+x${default} : $item"; chmod +x "source/$item"
+    fi
 done
 
 # Final: Finish up.
-echo -e "\n[F] Make complete."
+echo -e "\n${bold}${white}[F] Make complete.${default}${normal}"
+if (( errors > 0 )); then
+    echo "${red}Finished with ${errors} error(s).${default}"
+else
+    echo "${green}Finished without any errors.${default}"
+fi

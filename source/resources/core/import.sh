@@ -8,15 +8,15 @@ import() {
 
     # Respond accordingly
     if [ $code != 0 ]; then
-        echo "($(date)) FAILED to import library: $1" >> "$SHESKLOG"
-        echo "Error: Cannot import library, $1."
+        echo "(Import) FAILED to import library: $1" >> "$SHESKLOG"
+        echo; echo "Error: Cannot import library, $1."
         exit 1
     else
-        echo "($(date)) Imported library: $1" >> "$SHESKLOG"
+        echo "(Import) Imported library: $1" >> "$SHESKLOG"
     fi
 
 }
 
 # Exit
-echo "($(date)) Loaded core component: import" >> "$SHESKLOG"
+echo "(Loader) Core component loaded: import" >> "$SHESKLOG"
 return 0
