@@ -1,5 +1,5 @@
 #!/bin/bash
-export SHESKVER="0.0.2"
+export SHESKVER="0.0.3"
 export SHESKDIR="$(pwd)"
 export SHESKLOG="$SHESKDIR/log.txt"
 
@@ -19,7 +19,7 @@ echo "    - Import"; source "$SHESKDIR/resources/core/import.sh"
 echo "    - Sysmod"; source "$SHESKDIR/resources/core/sysmod.sh"
 
 # Run Resource Checks
-echo -e "\n* Resource Checks:"
+echo -e "\n* Package Checks:"
 echo "    - GNU Dialog"; check dialog
 
 # Import Libraries
@@ -35,5 +35,5 @@ echo -e "\n* Starting UI..."
 sleep 1; clear; exec_shome
 
 # Shut Down
-sleep 1; clear; echo "Goodbye!"
+clear; echo "Goodbye!"; sleep 1
 echo "($(date)) Shutting down SheskOS ${SHESKVER}..." >> "$SHESKLOG"

@@ -7,7 +7,6 @@ echo "[S] Making SheskOS..."
 echo -e "\n[0] List Preperation:"
 echo "    ~ Scripts"; scripts=(\
     main.sh\
-    resources/checks/dialog.sh\
     resources/core/check.sh\
     resources/core/import.sh\
     resources/core/sysmod.sh\
