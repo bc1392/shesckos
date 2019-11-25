@@ -1,5 +1,5 @@
 #!/bin/bash
-export SHESKVER="0.0.4"
+export SHESKVER="0.0.5"
 export SHESKDIR="$(pwd)"
 export SHESKLOG="$SHESKDIR/log.txt"
 
