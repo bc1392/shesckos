@@ -9,6 +9,10 @@ Before attempting to start SheskOS, make sure to execute `sh make.sh` in the roo
 ---
 
 ### Changelog
+- **Version 0.0.6pre1**
+    - Integrated login module.
+    - Added placeholder for login shell.
+    - Integrated locking functionality.
 - **Version 0.0.5c**
     - Removed extra test application.
     - Created System Viewer.

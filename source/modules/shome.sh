@@ -30,6 +30,7 @@ exec_shome() {
             "A" "Applications"\
             "-" "------------------------------"\
             "*" "Shut Down"\
+            "!" "Lock"\
         )
 
         # Submenu Logic
@@ -50,6 +51,14 @@ exec_shome() {
                         appexec "${appdirs[$subitem]}"
                     fi
                 fi
+            done
+
+        elif [ "$homeitem" == "!" ]; then
+
+            # Locking Loop
+            logbad=1
+            while [ $logbad != 0 ]; do
+                exec_login; logbad=$?
             done
 
         fi

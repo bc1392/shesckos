@@ -26,6 +26,7 @@ echo "    ${green}l2${default} : Scripts"; scripts=(\
     resources/libraries/appexec.sh\
     resources/libraries/color.sh\
     modules/shome.sh\
+    modules/login.sh\
     applications/hello/main.sh\
     applications/sysview/main.sh\
 )

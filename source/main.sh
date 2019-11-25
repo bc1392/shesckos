@@ -1,5 +1,5 @@
 #!/bin/bash
-export SHESKVER="0.0.5c"
+export SHESKVER="0.0.6pre1"
 export SHESKDIR="$(pwd)"
 export SHESKLOG="$SHESKDIR/log.txt"
 
@@ -31,11 +31,18 @@ import color
 
 # System Modules
 echo "* System Modules"
+sysmod login
 sysmod shome
 
 # Begin UI
 echo "* UI Initialization"
-sleep 1; clear; exec_shome
+sleep 1; clear
+logbad=1
+while [ $logbad != 0 ]; do
+    exec_login; logbad=$?
+done
+exec_shome
+
 
 # Shut Down
 clear; echo "* Goodbye!"; sleep 1
