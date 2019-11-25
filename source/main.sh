@@ -1,5 +1,5 @@
 #!/bin/bash
-export SHESKVER="0.0.5a"
+export SHESKVER="0.0.5b"
 export SHESKDIR="$(pwd)"
 export SHESKLOG="$SHESKDIR/log.txt"
 
@@ -21,6 +21,7 @@ source "$SHESKDIR/resources/core/sysmod.sh"
 
 # Run Resource Checks
 echo "* Package Checks"
+check bash
 check dialog
 
 # Import Libraries

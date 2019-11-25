@@ -27,6 +27,7 @@ echo "    ${green}l2${default} : Scripts"; scripts=(\
     resources/libraries/color.sh\
     modules/shome.sh\
     applications/hello/main.sh\
+    applications/test/main.sh\
 )
 
 # Task 1: Check packages.
