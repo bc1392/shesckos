@@ -9,6 +9,8 @@ Before attempting to start SheskOS, make sure to execute `sh make.sh` in the roo
 ---
 
 ### Changelog
+- **Version 0.0.5a**
+    - Tweaked make script.
 - **Version 0.0.5**
     - Incorperated a better menu system.
     - Added dynamic application listing <small>(this took way too long)</small>.
