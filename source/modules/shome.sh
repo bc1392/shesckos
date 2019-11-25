@@ -6,6 +6,7 @@ exec_shome() {
     # Startup
     echo "(sHome) Module started." >> "$SHESKLOG"
     export DIALOGRC="${SHESKDIR}/resources/configs/dialog.ini"
+    export DIALOGOP="--backtitle SheskOS"
 
     # Generate App Menu
     appcount=0; menucount=0;
@@ -24,8 +25,7 @@ exec_shome() {
 
         # Home Menu
         clear
-        homeitem=$(dialog --stdout --no-cancel\
-            --backtitle "SheskOS ${SHESKVER}"\
+        homeitem=$(dialog --stdout --no-cancel ${DIALOGOP}\
             --title "Home" --menu "" 0 50 0\
             "A" "Applications"\
             "-" "------------------------------"\
@@ -39,8 +39,7 @@ exec_shome() {
             subitem="-"
             while [ $subitem != "*" ]; do
                 clear
-                subitem=$(dialog --stdout --no-cancel\
-                    --backtitle "SheskOS ${SHESKVER}"\
+                subitem=$(dialog --stdout --no-cancel ${DIALOGOP}\
                     --title "Applications" --menu "" 0 50 0\
                     "${appmenu[@]}"\
                     "-" "------------------------------"\

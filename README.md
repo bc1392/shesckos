@@ -9,6 +9,10 @@ Before attempting to start SheskOS, make sure to execute `sh make.sh` in the roo
 ---
 
 ### Changelog
+- **Version 0.0.5c**
+    - Removed extra test application.
+    - Created System Viewer.
+    - Changed `hello` application dialog settings.
 - **Version 0.0.5b**
     - Added another test application.
     - Added check for `bash` requirement.
