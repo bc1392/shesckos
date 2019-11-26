@@ -6,7 +6,7 @@ exec_login() {
     # Startup
     echo "(Login) Module started." >> "$SHESKLOG"
     export DIALOGRC="${SHESKDIR}/resources/configs/dialog.ini"
-    export DIALOGOP="--backtitle Login"
+    DIALOGOP="--backtitle Login"
 
     # Placeholder
     dialog ${DIALOGOP} --msgbox "A login shell will go here." 5 32

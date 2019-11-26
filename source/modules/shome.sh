@@ -23,6 +23,10 @@ exec_shome() {
     homeitem="-"
     while [ "$homeitem" != "*" ]; do
 
+        # Reinitialize
+        export DIALOGRC="${SHESKDIR}/resources/configs/dialog.ini"
+        export DIALOGOP="--backtitle SheskOS"
+
         # Home Menu
         clear
         homeitem=$(dialog --stdout --no-cancel ${DIALOGOP}\
