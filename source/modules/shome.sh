@@ -41,21 +41,20 @@ exec_shome() {
         if [ "$homeitem" == "A" ]; then
 
             # Application Menu
-            subitem="-"
-            while [ $subitem != "*" ]; do
-                clear
-                subitem=$(dialog --stdout --no-cancel ${DIALOGOP}\
-                    --title "Applications" --menu "" 0 50 0\
-                    "${appmenu[@]}"\
-                    "-" "------------------------------"\
-                    "*" "Back"\
-                )
-                if [ "$subitem" != "*" ] & [ "$subitem" != "-" ]; then
-                    if [ "$subitem" != "*" ]; then
-                        appexec "${appdirs[$subitem]}"
-                    fi
+            clear; subitem="-"
+            subitem=$(dialog --stdout --no-cancel ${DIALOGOP}\
+                --title "Applications" --menu "" 0 50 0\
+                "${appmenu[@]}"\
+                "-" "------------------------------"\
+                "*" "Back"\
+            )
+
+            # Launching Logic
+            if [ "$subitem" != "*" ] & [ "$subitem" != "-" ]; then
+                if [ "$subitem" != "*" ]; then
+                    appexec "${appdirs[$subitem]}"
                 fi
-            done
+            fi
 
         elif [ "$homeitem" == "!" ]; then
 

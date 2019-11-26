@@ -9,6 +9,8 @@ Before attempting to start SheskOS, make sure to execute `sh make.sh` in the roo
 ---
 
 ### Changelog
+- **Version 0.0.6pre2a**
+    - Tweaked main menu behavior.
 - **Version 0.0.6pre2**
     - Fixed minor issue where dialog would not reinitialize after extra process exits.
 - **Version 0.0.6pre1**
